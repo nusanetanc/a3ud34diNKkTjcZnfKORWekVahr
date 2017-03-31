@@ -13,9 +13,6 @@ var dateNow = dateFormat(now, 'hammerTime')
 dateFormat.masks.hammerTime = 'h:M:s TT'
 var hourNow = dateFormat(now, 'hammerTime')
 
-//Configuration
-var spreadsheetId = '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw'
-
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/sheets.googleapis.com-nodejs-quickstart.json
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
@@ -144,7 +141,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: spreadsheetId,
+        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -179,7 +176,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: spreadsheetId,
+        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -214,7 +211,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: spreadsheetId,
+        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -249,7 +246,42 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: spreadsheetId,
+        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
+        range: 'Class Data!A' + rowNumberAccumulation + ':H',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+          values: [ ['-', telegramId, firstName + ' ' + lastName, dateNow, '-', '-', hourNow, '-']]
+        }
+      }, (err, response) => {
+        if (err) {
+          console.log('The API returned an error: ' + err)
+        } else {
+          return bot.sendMessage(msg.from.id, `Selamat datang kembali ${firstName}, mari kita kembali bekerja`)
+        }
+      })
+    }// end
+  } else if (hrMenu == 'break') {
+      // Load client secrets from a local file.
+    fs.readFile('client_secret.json', function processClientSecrets (err, content) {
+      if (err) {
+        console.log('Error loading client secret file: ' + err)
+        return
+      }
+          // Authorize a client with the loaded credentials, then call the
+          // Google Sheets API.
+      authorize(JSON.parse(content), listMajors)
+    })
+    function listMajors (auth) {
+      var sheets = google.sheets('v4')
+      rowNumberAccumulation += 1
+      fs.writeFile('rowNumberAccumulation.txt', rowNumberAccumulation, function (err) {
+        if (err) {
+          return console.error(err)
+        }
+      })
+      sheets.spreadsheets.values.clear({
+        auth: auth,
+        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
