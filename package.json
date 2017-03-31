@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nusanetanc/a3b73be099213f255222c380b6235a1b.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nusanetanc/a3b73be099213f255222c380b6235a1b/issues"
+  },
+  "homepage": "https://github.com/nusanetanc/a3b73be099213f255222c380b6235a1b#readme",
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "google-auth-library": "^0.10.0",
+    "google-spreadsheet": "^2.0.3",
+    "googleapis": "^18.0.0",
+    "standard": "^9.0.1",
+    "telebot": "^1.0.7"
+  }
+}
