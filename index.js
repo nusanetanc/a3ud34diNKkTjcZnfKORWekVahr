@@ -141,7 +141,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
+        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -176,7 +176,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
+        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -211,7 +211,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
+        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -246,7 +246,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw',
+        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
