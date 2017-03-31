@@ -13,6 +13,9 @@ var dateNow = dateFormat(now, 'hammerTime')
 dateFormat.masks.hammerTime = 'h:M:s TT'
 var hourNow = dateFormat(now, 'hammerTime')
 
+//Configuration
+var spreadsheetId = '1YPgGqd_QYxat0jwhIj5Ur6o9ZxLnpkH-NOxa22E3Dmw'
+
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/sheets.googleapis.com-nodejs-quickstart.json
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
@@ -141,7 +144,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
+        spreadsheetId: spreadsheetId,
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -176,7 +179,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
+        spreadsheetId: spreadsheetId,
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -211,7 +214,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
+        spreadsheetId: spreadsheetId,
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
@@ -246,7 +249,7 @@ bot.on('/hr', msg => {
       })
       sheets.spreadsheets.values.update({
         auth: auth,
-        spreadsheetId: '1x3ck5UnxknU1gNuRNcdRiMAL57MhDeQPdQ7NwHt_H_E',
+        spreadsheetId: spreadsheetId,
         range: 'Class Data!A' + rowNumberAccumulation + ':H',
         valueInputOption: 'USER_ENTERED',
         resource: {
